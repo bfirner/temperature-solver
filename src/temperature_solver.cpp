@@ -184,7 +184,6 @@ int main(int arg_count, char** arg_vector) {
 						//Get the temperature
 						double temperature = readPrimitive<double>(I.second[0].data, 0);
 						if (temp_state.end() == temp_state.find(uri) or temp_state[uri] != temperature) {
-							std::cerr<<"Updating temperature for "<<std::string(uri.begin(), uri.end())<<" to "<<temperature<<'\n';
 							temp_state[uri] = temperature;
 							//Use the object to solution map to get the solution name.
 							SolverWorldModel::AttrUpdate soln{u"temperature_celcius", world_model::getGRAILTime(), uri, std::vector<uint8_t>()};
