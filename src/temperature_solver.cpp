@@ -245,8 +245,6 @@ int main(int arg_count, char** arg_vector) {
 		catch (std::runtime_error& err) {
 			std::cerr<<"Error in client->world model connection: "<<err.what()<<'\n';
 		}
-		//Yield to allow the client world connection to run for a bit
-		std::this_thread::yield();
   }
 }
 
