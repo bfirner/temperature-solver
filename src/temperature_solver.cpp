@@ -90,7 +90,7 @@ int main(int arg_count, char** arg_vector) {
   }
 
   if (4 > arg_count or (arg_count % 2) == 1) {
-    std::cerr<<"This program needs 4 arguments:\n";
+    std::cerr<<"This program needs 3 arguments:\n";
     std::cerr<<"\t"<<arg_vector[0]<<" <world model ip> <solver port> <client port>\n\n";
     return 0;
   }
