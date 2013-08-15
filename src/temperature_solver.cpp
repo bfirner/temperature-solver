@@ -109,7 +109,7 @@ int main(int arg_count, char** arg_vector) {
   //Read in type information from the config file
   //Types for the GRAIL world model will be read from the file
   std::vector<std::pair<std::u16string, bool>> type_pairs;
-	type_pairs.push_back(std::make_pair(u"temperature_celcius", false));
+	type_pairs.push_back(std::make_pair(u"temperature.celsius", false));
 
   //Remember what names correspond to what solutions and build a
   //query to find all objects of interest.
@@ -186,7 +186,7 @@ int main(int arg_count, char** arg_vector) {
 						if (temp_state.end() == temp_state.find(uri) or temp_state[uri] != temperature) {
 							temp_state[uri] = temperature;
 							//Use the object to solution map to get the solution name.
-							SolverWorldModel::AttrUpdate soln{u"temperature_celcius", world_model::getGRAILTime(), uri, std::vector<uint8_t>()};
+							SolverWorldModel::AttrUpdate soln{u"temperature.celsius", world_model::getGRAILTime(), uri, std::vector<uint8_t>()};
 							pushBackVal<double>(temperature, soln.data);
 							std::vector<SolverWorldModel::AttrUpdate> solns{soln};
 							//Send the data to the world model
